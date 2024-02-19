@@ -2,6 +2,7 @@ package constructor;
 
 public class TimeDTO {
 	private long start, end, total;
+	
 	public long getStart() {
 	return start;
 	/*

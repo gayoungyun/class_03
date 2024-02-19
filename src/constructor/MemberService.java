@@ -29,9 +29,17 @@ public class MemberService {
 					eng = input.nextInt();
 					System.out.print("수학 : ");
 					math = input.nextInt();
-					t.setName(name); t.setKor(kor); t.setEng(eng); t.setMath(math);
-					//sum = kor+eng+math;
+					t.setName(name); 
+					t.setKor(kor); 
+					t.setEng(eng); 
+					t.setMath(math);
 					t.setSum(kor+eng+math);
+					t.setAvg(t.getSum()/3.0);
+					if(t.getAvg()>=90)
+						t.setGrade("A");
+				else if((t.getAvg()>=80))
+					t.setGrade("B");
+				else t.setGrade("CCC");
 				}
 			}
 			if(num == 2) {
@@ -40,6 +48,9 @@ public class MemberService {
 				System.out.println("영어 : "+t.getEng());
 				System.out.println("수학 : "+t.getMath());
 				System.out.println("합계 : "+t.getSum());
+				System.out.println("평균 : "+t.getAvg());
+				System.out.println("등급 : "+t.getGrade());
+				System.out.println("=============");
 
 			}
 			if(num == 3) {
@@ -62,10 +73,20 @@ public class MemberService {
 					System.out.println("변경수학점수");
 					t.setMath(input.nextInt());
 				}
+				t.setSum(kor+eng+math);
+				t.setAvg(t.getSum()/3.0);
+				if(t.getAvg()>=90)
+					t.setGrade("A");
+			else if((t.getAvg()>=80))
+				t.setGrade("B");
+			else t.setGrade("CCC");
 				System.out.println("이름 : "+t.getName());
 				System.out.println("국어 : "+t.getKor());
 				System.out.println("영어 : "+t.getEng());
 				System.out.println("수학 : "+t.getMath());
+				System.out.println("합계 : "+t.getSum());
+				System.out.println("평균 : "+t.getAvg());
+				System.out.println("등급 : "+t.getGrade());
 
 			}if(num ==4) {
 
@@ -74,6 +95,7 @@ public class MemberService {
 				t.setEng(0); 
 				t.setMath(0); 
 				t.setSum(0);
+				t.setAvg(0);
 				System.out.println("회원탈퇴");
 
 
